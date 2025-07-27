@@ -67,9 +67,9 @@
 - **Ahorro por alquiler**: $169,931 USD/año
 
 ### Ingresos por Venta de Energía
-- **Precio compra EdERSA**: 60 USD/MWh
-- **Ingreso mensual**: $42,827 USD/mes
-- **Ingreso anual**: $513,918 USD/año
+- **Precio compra EdERSA**: 71 USD/MWh
+- **Ingreso mensual**: $50,678 USD/mes
+- **Ingreso anual**: $608,136 USD/año
 
 ## 5. RESUMEN EJECUTIVO
 

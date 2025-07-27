@@ -338,7 +338,7 @@ economics:
   discount_rate: 0.12
   inflation_rate: 0.03
   exchange_rate_ars_usd: 1000  # Update as needed
-  energy_cost_usd_per_mwh: 50
+  energy_cost_usd_per_mwh: 71
   loss_cost_usd_per_mwh: 70
   voll_usd_per_mwh: 500  # Value of Lost Load
   

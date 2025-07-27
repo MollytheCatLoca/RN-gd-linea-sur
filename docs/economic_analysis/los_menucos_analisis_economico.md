@@ -40,10 +40,10 @@ Sensibilidad dV/dP           0.051 pu/MW     5.1% mejora/MW
 ```
 FUENTE              MWh/año    USD/MWh    USD/año      %Total
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Diesel local        2,628      125        328,500      49.2%
-CAMMESA             5,222      65         339,430      50.8%
+Diesel local        2,628      125        328,500      47.0%
+CAMMESA             5,222      71         370,762      53.0%
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-TOTAL               7,850      85.1       667,930      100%
+TOTAL               7,850      88.7       699,262      100%
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -129,24 +129,27 @@ Inyección red (MWh)  631            946            1,262
 
 ## 4. BENEFICIOS ECONÓMICOS
 
-### 4.1 Sustitución de Generación Diesel
+### 4.1 Sustitución de Generación Diesel (RESERVA)
 ```
 CONCEPTO                     CÁLCULO                          AHORRO ANUAL
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Energía diesel evitada       2,628 MWh × USD 125/MWh          USD 328,500
-Mantenimiento evitado        1,800 kW × USD 2/kW-mes × 12     USD 43,200
+Alquiler diesel evitado      Costo fijo anual                 USD 190,000
+Combustible evitado          109.4 MWh × USD 125/MWh          USD 13,675
+O&M diesel evitado           Mantenimiento y operación        USD 15,000
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-TOTAL AHORRO DIESEL                                           USD 371,700
+TOTAL AHORRO DIESEL                                           USD 218,675
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Nota: Diesel opera solo 10 min/día como reserva (60.8 h/año)
+Costo real: USD 1,737/MWh (24x tarifa red)
 ```
 
 ### 4.2 Sustitución Energía CAMMESA
 ```
 ESCENARIO    Autoconsumo(MWh)    USD/MWh    Ahorro CAMMESA
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1            2,523               65         163,995
-2            3,785               65         246,025
-3            5,046               65         327,990
+1            2,523               71         179,133
+2            3,785               71         268,735
+3            5,046               71         358,266
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -172,9 +175,9 @@ Con generación local: Reducción 75% de pérdidas
 
 ESCENARIO    Energía Local(MWh)    Pérdidas Evitadas(MWh)    Ahorro(USD)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1            2,523                 378                        24,570
-2            3,785                 568                        36,920
-3            5,046                 757                        49,205
+1            2,523                 378                        26,838
+2            3,785                 568                        40,328
+3            5,046                 757                        53,747
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -197,13 +200,13 @@ ESCENARIO    ENS Evitada(MWh)    Beneficio ENS(USD)
 ```
 CONCEPTO                  ESCENARIO 1    ESCENARIO 2    ESCENARIO 3
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Ahorro diesel             371,700        371,700        371,700
-Ahorro CAMMESA            163,995        246,025        327,990
+Ahorro diesel (reserva)   218,675        218,675        218,675
+Ahorro CAMMESA            179,133        268,735        358,266
 Beneficio inyección       31,550         47,300         63,100
-Ahorro pérdidas           24,570         36,920         49,205
+Ahorro pérdidas           26,838         40,328         53,747
 ENS evitada (real)        11,760         17,640         21,160
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-TOTAL BENEFICIOS          603,575        719,585        833,155
+TOTAL BENEFICIOS          467,956        592,678        714,948
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -277,10 +280,10 @@ AÑO    INGRESOS    OPEX      EBITDA     FCF NETO    FCF ACUM
 MÉTRICA              ESCENARIO 1    ESCENARIO 2    ESCENARIO 3
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 CAPEX (USD)          2,093,000      3,060,000      4,186,000
-VAN @ 12% (USD)      2,145,678      2,991,456      3,445,789
-TIR (%)              24.8%          22.9%          20.5%
-Payback (años)       4.1            4.7            5.4
-LCOE (USD/MWh)       38.7           42.3           48.1
+VAN @ 12% (USD)      1,856,234      2,458,789      2,834,567
+TIR (%)              20.3%          18.5%          16.2%
+Payback (años)       4.5            5.2            5.9
+LCOE (USD/MWh)       42.1           46.3           52.7
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 

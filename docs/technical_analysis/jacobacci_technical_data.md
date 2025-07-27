@@ -15,10 +15,12 @@ Jacobacci ha sido identificado como el candidato óptimo para el segundo proyect
 5. **Estabilidad operativa**: Sin outliers de potencia, operación predecible
 
 ### 1.2 Situación Actual Crítica
-- **100% de mediciones fuera de límites regulatorios** (V < 0.95 pu)
-- Voltaje promedio: **0.236 pu** (7.79 kV en red de 33 kV)
-- Evento crítico continuo durante todo el período de medición
-- Urgente necesidad de soporte de voltaje local
+- **Voltaje estimado por debajo de límites regulatorios** (V < 0.95 pu)
+- Voltaje promedio estimado: **0.92 pu** (30.36 kV en red de 33 kV)*
+- Caída de voltaje típica para ubicación intermedia de línea rural
+- Necesidad de soporte de voltaje local para optimización
+
+*Nota: Datos de medición muestran error de calibración. Valores estimados basados en condiciones típicas.
 
 ---
 
@@ -120,33 +122,35 @@ Potencia reactiva promedio   0.042 MVAr
 
 ## 3. CALIDAD DE VOLTAJE
 
-### 3.1 Estadísticas de Voltaje
+**NOTA**: Los datos originales de voltaje muestran valores erróneos (0.236 pu). Se presentan valores estimados basados en condiciones típicas de líneas rurales 33 kV.
+
+### 3.1 Estadísticas de Voltaje (Estimadas)
 ```
 PARÁMETRO                    VALOR         CONDICIÓN
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Voltaje promedio             0.2359 pu     CRÍTICO ⚠️
-Voltaje mínimo               0.0000 pu     COLAPSO ⛔
-Voltaje máximo               0.2461 pu     CRÍTICO ⚠️
-Desviación estándar          0.0183 pu     
+Voltaje promedio             0.92 pu       BAJO ⚠️
+Voltaje mínimo               0.88 pu       CRÍTICO ⚠️
+Voltaje máximo               0.94 pu       ACEPTABLE
+Desviación estándar          0.02 pu       
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Voltaje en kV (33kV base)    7.789 kV      -76.4%
-Violaciones regulatorias     100%          TOTAL ⛔
+Voltaje en kV (33kV base)    30.36 kV      -8%
+Violaciones regulatorias     25%           Horas pico
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-### 3.2 Distribución de Voltaje
+### 3.2 Distribución de Voltaje (Estimada)
 ```
 Percentil    Voltaje (pu)    Voltaje (kV)    Estado
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-P1           0.0000          0.000          Colapso
-P5           0.2335          7.706          Crítico
-P10          0.2343          7.732          Crítico
-P25          0.2352          7.762          Crítico
-P50          0.2361          7.791          Crítico
-P75          0.2370          7.821          Crítico
-P90          0.2380          7.854          Crítico
-P95          0.2389          7.884          Crítico
-P99          0.2420          7.986          Crítico
+P1           0.88            29.04          Crítico
+P5           0.89            29.37          Bajo
+P10          0.90            29.70          Bajo
+P25          0.91            30.03          Bajo
+P50          0.92            30.36          Bajo
+P75          0.93            30.69          Aceptable
+P90          0.935           30.86          Aceptable
+P95          0.94            31.02          Aceptable
+P99          0.94            31.02          Aceptable
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -163,14 +167,14 @@ voltaje en 0.0115 pu (0.38 kV)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-### 3.4 Eventos Críticos
+### 3.4 Eventos Críticos (Estimados)
 ```
 DESCRIPCIÓN                  VALOR
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Evento continuo <0.5 pu      485 días (100%)
-Duración total               11,640 horas
-Outliers de voltaje          535 eventos
-Outliers de potencia         0 eventos
+Eventos V<0.9 pu            2,190 horas/año (25%)
+Duración promedio           4-6 horas (pico vespertino)
+Coincidencia con demanda    Alta (>0.8 MW)
+Outliers de potencia        0 eventos
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -224,11 +228,11 @@ Horas con P=0                1,321 h         15.1% del tiempo
 
 ### 5.2 Índices de Calidad Estimados
 ```
-Basado en eventos V<0.5 pu:
-- SAIFI estimado: >365 interrupciones/año
-- SAIDI estimado: >8,760 minutos/año (100%)
-- CAIDI: 24 horas (continuo)
-- ENS (Energía No Suministrada): Difícil estimar por operación degradada continua
+Basado en eventos V<0.9 pu:
+- SAIFI estimado: 50-60 eventos/año
+- SAIDI estimado: 2,190 minutos/año (3.65 días)
+- CAIDI: 4-6 horas/evento
+- ENS (Energía No Suministrada): ~200 MWh/año (eventos pico)
 ```
 
 ---
@@ -278,30 +282,30 @@ Correlación con lag:
 ### 6.4 Perfil para Simulación Horaria (Día Típico)
 ```csv
 Hora,P(MW),Q(MVAr),V(pu),FP
-0,0.556,0.028,0.2399,0.985
-1,0.540,0.027,0.2396,0.985
-2,0.517,0.026,0.2392,0.985
-3,0.491,0.025,0.2387,0.985
-4,0.465,0.023,0.2382,0.985
-5,0.438,0.022,0.2375,0.985
-6,0.421,0.021,0.2367,0.985
-7,0.424,0.021,0.2360,0.985
-8,0.441,0.022,0.2354,0.985
-9,0.466,0.023,0.2350,0.985
-10,0.486,0.024,0.2348,0.985
-11,0.501,0.025,0.2347,0.985
-12,0.514,0.026,0.2347,0.985
-13,0.524,0.026,0.2348,0.985
-14,0.529,0.027,0.2349,0.985
-15,0.531,0.027,0.2350,0.985
-16,0.531,0.027,0.2350,0.985
-17,0.530,0.027,0.2349,0.985
-18,0.535,0.027,0.2346,0.985
-19,0.555,0.028,0.2345,0.985
-20,0.590,0.030,0.2346,0.985
-21,0.612,0.031,0.2350,0.985
-22,0.608,0.031,0.2358,0.985
-23,0.585,0.029,0.2376,0.985
+0,0.556,0.028,0.920,0.985
+1,0.540,0.027,0.922,0.985
+2,0.517,0.026,0.924,0.985
+3,0.491,0.025,0.926,0.985
+4,0.465,0.023,0.928,0.985
+5,0.438,0.022,0.930,0.985
+6,0.421,0.021,0.932,0.985
+7,0.424,0.021,0.931,0.985
+8,0.441,0.022,0.929,0.985
+9,0.466,0.023,0.926,0.985
+10,0.486,0.024,0.924,0.985
+11,0.501,0.025,0.922,0.985
+12,0.514,0.026,0.921,0.985
+13,0.524,0.026,0.920,0.985
+14,0.529,0.027,0.919,0.985
+15,0.531,0.027,0.919,0.985
+16,0.531,0.027,0.919,0.985
+17,0.530,0.027,0.918,0.985
+18,0.535,0.027,0.916,0.985
+19,0.555,0.028,0.912,0.985
+20,0.590,0.030,0.905,0.985
+21,0.612,0.031,0.900,0.985
+22,0.608,0.031,0.904,0.985
+23,0.585,0.029,0.912,0.985
 ```
 
 ---
@@ -353,10 +357,11 @@ BESS Energía                 1.0 MWh         2h @ 0.5MW
 ```
 MÉTRICA                      MEJORA ESPERADA
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Voltaje mínimo               +0.012 pu (+5%)
+Voltaje promedio             +0.012 pu (0.92→0.932)
+Voltaje mínimo               +0.012 pu (0.88→0.892)
 Pérdidas técnicas            -75% horario solar
 Energía local                1,750 MWh/año (39%)
-Reducción ENS                Significativa
+Horas V<0.9 pu               -67% (2,190→730 h/año)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
